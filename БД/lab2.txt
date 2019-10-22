@@ -1,0 +1,11 @@
+CREATE DATABASE "AirPort"
+
+CREATE TABLE Cargo
+(
+    id       INT NOT NULL,
+    ticketID INT NOT NULL,
+    cost     INT NOT NULL CONSTRAINT neg_value CHECK ( cost>0 ),
+    weight   INT NOT NULL CONSTRAINT neg_val CHECK ( weight>0 ),
+    class   SMALLINT NOT NULL
+);
+
