@@ -1,0 +1,46 @@
+2019-12-27 23:43:41,673 INFO sqlalchemy.engine.base.Engine select version()
+2019-12-27 23:43:41,677 INFO sqlalchemy.engine.base.Engine {}
+2019-12-27 23:43:41,685 INFO sqlalchemy.engine.base.Engine select current_schema()
+2019-12-27 23:43:41,686 INFO sqlalchemy.engine.base.Engine {}
+2019-12-27 23:43:41,693 INFO sqlalchemy.engine.base.Engine SELECT CAST('test plain returns' AS VARCHAR(60)) AS anon_1
+2019-12-27 23:43:41,694 INFO sqlalchemy.engine.base.Engine {}
+2019-12-27 23:43:41,697 INFO sqlalchemy.engine.base.Engine SELECT CAST('test unicode returns' AS VARCHAR(60)) AS anon_1
+2019-12-27 23:43:41,698 INFO sqlalchemy.engine.base.Engine {}
+2019-12-27 23:43:41,700 INFO sqlalchemy.engine.base.Engine show standard_conforming_strings
+2019-12-27 23:43:41,701 INFO sqlalchemy.engine.base.Engine {}
+2019-12-27 23:43:41,710 INFO sqlalchemy.engine.base.Engine select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where pg_catalog.pg_table_is_visible(c.oid) and relname=%(name)s
+2019-12-27 23:43:41,712 INFO sqlalchemy.engine.base.Engine {'name': 'airpost'}
+2019-12-27 23:43:41,720 INFO sqlalchemy.engine.base.Engine select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where pg_catalog.pg_table_is_visible(c.oid) and relname=%(name)s
+2019-12-27 23:43:41,722 INFO sqlalchemy.engine.base.Engine {'name': 'airplane'}
+2019-12-27 23:43:41,726 INFO sqlalchemy.engine.base.Engine select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where pg_catalog.pg_table_is_visible(c.oid) and relname=%(name)s
+2019-12-27 23:43:41,727 INFO sqlalchemy.engine.base.Engine {'name': 'personal'}
+2019-12-27 23:43:41,731 INFO sqlalchemy.engine.base.Engine select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where pg_catalog.pg_table_is_visible(c.oid) and relname=%(name)s
+2019-12-27 23:43:41,732 INFO sqlalchemy.engine.base.Engine {'name': 'position'}
+2019-12-27 23:43:41,736 INFO sqlalchemy.engine.base.Engine select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where pg_catalog.pg_table_is_visible(c.oid) and relname=%(name)s
+2019-12-27 23:43:41,737 INFO sqlalchemy.engine.base.Engine {'name': 'flight'}
+2019-12-27 23:43:41,741 INFO sqlalchemy.engine.base.Engine select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where pg_catalog.pg_table_is_visible(c.oid) and relname=%(name)s
+2019-12-27 23:43:41,742 INFO sqlalchemy.engine.base.Engine {'name': 'stocks'}
+2019-12-27 23:43:41,745 INFO sqlalchemy.engine.base.Engine select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where pg_catalog.pg_table_is_visible(c.oid) and relname=%(name)s
+2019-12-27 23:43:41,746 INFO sqlalchemy.engine.base.Engine {'name': 'client'}
+2019-12-27 23:43:41,750 INFO sqlalchemy.engine.base.Engine select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where pg_catalog.pg_table_is_visible(c.oid) and relname=%(name)s
+2019-12-27 23:43:41,752 INFO sqlalchemy.engine.base.Engine {'name': 'phone'}
+2019-12-27 23:43:41,759 INFO sqlalchemy.engine.base.Engine select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where pg_catalog.pg_table_is_visible(c.oid) and relname=%(name)s
+2019-12-27 23:43:41,760 INFO sqlalchemy.engine.base.Engine {'name': 'ticket'}
+2019-12-27 23:43:41,764 INFO sqlalchemy.engine.base.Engine select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where pg_catalog.pg_table_is_visible(c.oid) and relname=%(name)s
+2019-12-27 23:43:41,766 INFO sqlalchemy.engine.base.Engine {'name': 'cargo'}
+2019-12-27 23:43:41,773 INFO sqlalchemy.engine.base.Engine select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where pg_catalog.pg_table_is_visible(c.oid) and relname=%(name)s
+2019-12-27 23:43:41,777 INFO sqlalchemy.engine.base.Engine {'name': 'airplanepersonal'}
+2019-12-27 23:43:41,783 INFO sqlalchemy.engine.base.Engine select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where pg_catalog.pg_table_is_visible(c.oid) and relname=%(name)s
+2019-12-27 23:43:41,786 INFO sqlalchemy.engine.base.Engine {'name': 'flightpersonal'}
+Traceback (most recent call last):
+  File "C:\Users\Novoz\source\repos\PyAppBD7\PyAppBD7\PyAppBD7.py", line 236, in btnClicked3
+    self.Updatepost(int(s[0]),owner='hello')
+  File "C:\Users\Novoz\source\repos\PyAppBD7\PyAppBD7\PyAppBD7.py", line 266, in Updatepost
+    self.session.query(Airpost).filter(Airpost.id==id).values(kvargs).update()
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\sqlalchemy\orm\query.py", line 1469, in values
+    q._set_entities(columns, entity_wrapper=_ColumnEntity)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\sqlalchemy\orm\query.py", line 195, in _set_entities
+    entity_wrapper(self, ent)
+  File "C:\Program Files (x86)\Microsoft Visual Studio\Shared\Python37_64\lib\site-packages\sqlalchemy\orm\query.py", line 4544, in __init__
+    "expected - got '%r'" % (column,)
+sqlalchemy.exc.InvalidRequestError: SQL expression, column, or mapped entity expected - got '{'owner': 'hello'}'
